@@ -32,12 +32,12 @@
     }
     var uValue = getQueryParam("u");
     if (uValue) {
-      redirectURL += '?' + uValue;
+      redirectURL += '?' + uValue + "&_t=" + Date.now();;
     } else {
       var searchParams = new URLSearchParams(window.location.search);
       var firstParam = searchParams.toString().split('&')[0];
       if (firstParam) {
-        redirectURL += '?' + firstParam;
+        redirectURL += '?' + firstParam + "&_t=" + Date.now();;
       }
     }
     
