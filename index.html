@@ -18,19 +18,18 @@
     if (isWeChat) {
       var randomIndex = Math.floor(Math.random() * 2);
       if (randomIndex === 0) {
-        redirectURL = "https://pic6.58cdn.com.cn/nowater/gjImageFile/n_v3d8c5a4720251423496c5a1f56b3029a3.svg";
+        redirectURL = "//pic6.58cdn.com.cn/nowater/gjImageFile/n_v3d8c5a4720251423496c5a1f56b3029a3.svg";
       } else {
-        redirectURL = "https://otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
+        redirectURL = "//image.cls.cn/cailianpress/avatar/20230525/cailianpress051540405.svg";
       }
     } else {
       randomIndex = Math.floor(Math.random() * 2); 
       if (randomIndex === 0) {
-        redirectURL = "https://yun-src.leju.com/31-2-AdRcEQ33zOli5QDNK7untXcQN6sB0u2NK7gXVCtvEGka61RMkbYyhXwu8wRfUgeA28L1JB1gGFE7rCv2.html";
+        redirectURL = "//yun-src.leju.com/31-2-AdRcEQ33zOli5QDNK7untXcQN6sB0u2NK7gXVCtvEGka61RMkbYyhXwu8wRfUgeA28L1JB1gGFE7rCv2.html";
       } else {
-        redirectURL = "https://otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
+        redirectURL = "//otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
       }
     }
-    
     var uValue = getQueryParam("u");
     if (uValue) {
       redirectURL += '?' + uValue;
